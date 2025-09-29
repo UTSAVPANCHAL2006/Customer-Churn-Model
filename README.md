@@ -1,74 +1,68 @@
 Customer Churn Prediction
 
 🌟 Overview:
-This project predicts customer churn for a telecom company using historical customer data. The goal is to identify customers likely to leave and enable proactive retention strategies.
+Predict customer churn for a telecom company using historical data to identify at-risk customers and support proactive retention strategies.
 
 📊 Dataset:
-Telco Customer Churn Dataset from Kaggle
+Telco Customer Churn Dataset (Kaggle)
 
+Key Features
 
-Key Features:
+👤 Customer Info: gender, SeniorCitizen, Partner, Dependents
 
-   👤 gender, SeniorCitizen, Partner, Dependents
-   
-   📅 tenure
-   
-   📞 PhoneService, MultipleLines, InternetService
-   
-   🔒 OnlineSecurity, OnlineBackup, DeviceProtection, TechSupport
-   
-   📺 StreamingTV, StreamingMovies
-   
-   📄 Contract, PaperlessBilling
-   
-   💳 PaymentMethod, MonthlyCharges, TotalCharges
-   
-   🎯 Churn (target)
-   
-🛠️ Approach:
+📅 Tenure
 
-  Data Preprocessing
-  
-  Handle missing values (TotalCharges) ✅
-  
-  One-hot encode categorical variables 🏷️
-  
-  Scale numeric features (tenure, MonthlyCharges, TotalCharges) 📏
+📞 Services: PhoneService, MultipleLines, InternetService
 
-Modeling:
+🔒 Security & Support: OnlineSecurity, OnlineBackup, DeviceProtection, TechSupport
 
-  Logistic Regression ⚡
-  
-  Random Forest Classifier 🌲
-  
-  Evaluation Metrics
-  
-  Accuracy, Precision, Recall, F1-score, ROC AUC 📈
+📺 Entertainment: StreamingTV, StreamingMovies
 
-  
-Feature Importance Overview:
+📄 Billing & Contract: Contract, PaperlessBilling
 
-After training a Random Forest model to predict customer churn, we analyzed the contribution of each feature. Features with importance values above 0.100 were identified as the most significant predictors of churn. These top features are:
+💳 Payments: PaymentMethod, MonthlyCharges, TotalCharges
 
-TotalCharges:
-Represents the total amount a customer has spent.
-Longer-term or high-spending customers tend to have lower churn risk.
+🎯 Target: Churn
 
-Tenure:
-Measures how long a customer has been with the company.
-Customers with shorter tenure are more likely to churn.
+🛠️ Approach
 
-MonthlyCharges:
-Indicates the recurring monthly subscription fee.
-Higher monthly charges are often associated with higher churn probability, especially for customers on month-to-month contracts.
+Data preprocessing
 
-Contract:
+Handle missing values (TotalCharges) ✅
 
-The type of contract (month-to-month, one-year, two-year).
-Month-to-month customers have the highest churn risk, while long-term contracts reduce churn likelihood.
+One-hot encode categorical variables 🏷️
+
+Scale numeric features (Tenure, MonthlyCharges, TotalCharges) 📏
+
+Modeling
+
+Logistic Regression ⚡
+
+Random Forest Classifier 🌲
+
+Evaluation Metrics
+
+Accuracy, Precision, Recall, F1-score, ROC AUC 📈
+
+Feature Importance (Random Forest)
+
+Features with importance > 0.100 are the strongest predictors of churn:
+
+TotalCharges 💰
+
+Total customer spend. Longer-term or high-spending customers churn less.
+
+Tenure ⏳
+
+Customer lifetime. Shorter-tenure customers are more likely to churn.
+
+MonthlyCharges 💳
+
+Recurring monthly fees. Higher charges often increase churn risk, especially for month-to-month contracts.
+
+Contract 📄
+
+Contract type (Month-to-month, 1-year, 2-year). Month-to-month customers have the highest churn risk.
 
 Insight:
-These four features dominate the model’s predictions, with importance values above 0.100, suggesting that churn is primarily driven by customer tenure, spending behavior, and contract type. Other features in the dataset had lower importance (<0.100), contributing less to the prediction but potentially useful for minor interactions.
-
-
-
+These four features dominate predictions, showing churn is mainly driven by tenure, spending behavior, and contract type. Other features (<0.100 importance) contribute less but can still provide minor insights.
